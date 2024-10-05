@@ -1,0 +1,12 @@
+package com.home.fibonacci.rest.mapper.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+public class FibonacciSequenceDTO {
+    private Integer sum;
+}
