@@ -58,7 +58,7 @@ public class FibonacciServiceImpl implements FibonacciService {
                 .getFibonacciSequenceByFibonacciSequenceNumber(fibonacciSequenceNumber);
     }
 
-    private FibonacciSequence create(
+    public FibonacciSequence create(
             Integer number,
             boolean calculateSum,
             Optional<Integer> minusOneNumberFibonacci,
