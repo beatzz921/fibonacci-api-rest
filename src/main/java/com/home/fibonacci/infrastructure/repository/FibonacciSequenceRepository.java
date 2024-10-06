@@ -13,6 +13,4 @@ public interface FibonacciSequenceRepository extends JpaRepository<FibonacciSequ
 
     @Query("SELECT fbs FROM FibonacciSequenceEntity fbs ORDER BY requestCounter DESC LIMIT 3")
     List<FibonacciSequenceEntity> findTop3RequestedSequences(Pageable pageable);
-
-
 }

@@ -4,6 +4,7 @@ import com.home.fibonacci.application.service.FibonacciServiceImpl;
 import com.home.fibonacci.domain.model.FibonacciSequence;
 import com.home.fibonacci.rest.mapper.FibonacciSequenceDTOMapper;
 import com.home.fibonacci.rest.mapper.dto.FibonacciSequenceDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,23 +18,18 @@ import java.util.List;
 @RestController
 public class FibonacciApiController {
 
-    private final FibonacciServiceImpl fibonacciServiceImpl;
+    @Autowired
+    private FibonacciServiceImpl fibonacciServiceImpl;
 
-    private final FibonacciSequenceDTOMapper fibonacciSequenceDTOMapper;
-
-    public FibonacciApiController(
-            FibonacciServiceImpl fibonacciServiceImpl,
-            FibonacciSequenceDTOMapper fibonacciSequenceDTOMapper
-    ) {
-        this.fibonacciServiceImpl = fibonacciServiceImpl;
-        this.fibonacciSequenceDTOMapper = fibonacciSequenceDTOMapper;
-    }
+    @Autowired
+    private FibonacciSequenceDTOMapper fibonacciSequenceDTOMapper;
 
     @GetMapping("/generate/{input}")
     public ResponseEntity<FibonacciSequenceDTO> generateSequence(
             @PathVariable("input") Integer number
     ) {
         FibonacciSequence fibonacciSequence = this.fibonacciServiceImpl.generate(number);
+
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(this.fibonacciSequenceDTOMapper.

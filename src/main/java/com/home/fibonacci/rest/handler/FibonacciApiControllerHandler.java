@@ -21,6 +21,7 @@ public class FibonacciApiControllerHandler {
     @ExceptionHandler(value = {InvalidInputException.class})
     public ResponseEntity<Object> handleInvalidInputException(final InvalidInputException ex) {
         log.error(MESSAGE, "method='handleInvalidInputException'", ex.getCode(), ex.getMessage());
+
         return this.getErrorResponse(
                 ApplicationExceptionCode.INVALID_INPUT,
                 HttpStatus.BAD_REQUEST,

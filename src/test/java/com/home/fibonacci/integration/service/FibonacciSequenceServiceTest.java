@@ -2,7 +2,6 @@ package com.home.fibonacci.integration.service;
 
 import com.home.fibonacci.application.persistence.FibonacciSequencePersistenceImpl;
 import com.home.fibonacci.application.service.FibonacciServiceImpl;
-import com.home.fibonacci.application.validator.FibonacciInputValidatorImpl;
 import com.home.fibonacci.domain.model.FibonacciSequence;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

@@ -23,5 +23,4 @@ public class FibonacciSequenceEntity {
     private Integer sum;
 
     private Integer requestCounter;
-
 }

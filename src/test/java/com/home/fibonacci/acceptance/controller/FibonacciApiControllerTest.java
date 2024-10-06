@@ -28,7 +28,9 @@ class FibonacciApiControllerTest {
         return host + this.port + endpoint + "/" + number;
     }
 
-    private ResponseEntity<FibonacciSequenceDTO> consumeEndpoint(Integer fibonacciSequenceNumber) {
+    private ResponseEntity<FibonacciSequenceDTO> consumeEndpoint(
+            Integer fibonacciSequenceNumber
+    ) {
         String url = this.buildUrl(fibonacciSequenceNumber);
         return this.testRestTemplate.getForEntity(url, FibonacciSequenceDTO.class);
     }

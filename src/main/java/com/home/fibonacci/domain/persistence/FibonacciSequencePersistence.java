@@ -1,7 +1,6 @@
 package com.home.fibonacci.domain.persistence;
 
 import com.home.fibonacci.domain.model.FibonacciSequence;
-import com.home.fibonacci.infrastructure.entity.FibonacciSequenceEntity;
 
 import java.util.List;
 
@@ -14,5 +13,4 @@ public interface FibonacciSequencePersistence {
     );
 
     List<FibonacciSequence> getTop3RequestedSequences();
-
 }

@@ -111,10 +111,15 @@ public class FibonacciSequencePersistenceTest {
                 .getFibonacciSequenceByFibonacciSequenceNumber(FBS_SEQUENCE_NUMBER_3);
 
         assertNotNull(result);
-        assertEquals(expectedFibonacciSequence.getFibonacciSequenceNumber(), result.getFibonacciSequenceNumber());
+        assertEquals(
+                expectedFibonacciSequence.getFibonacciSequenceNumber(),
+                result.getFibonacciSequenceNumber()
+        );
         assertEquals(expectedFibonacciSequence.getSum(), result.getSum());
-        verify(this.fibonacciSequenceRepository).findByFibonacciSequenceNumber(FBS_SEQUENCE_NUMBER_3);
-        verify(this.fibonacciSequenceEntityMapper).asFibonacciSequence(expectedFibonacciSequenceEntity);
+        verify(this.fibonacciSequenceRepository)
+                .findByFibonacciSequenceNumber(FBS_SEQUENCE_NUMBER_3);
+        verify(this.fibonacciSequenceEntityMapper)
+                .asFibonacciSequence(expectedFibonacciSequenceEntity);
     }
 
     private List<FibonacciSequenceEntity> fillData() {
@@ -123,13 +128,11 @@ public class FibonacciSequencePersistenceTest {
         entity1.setFibonacciSequenceNumber(FBS_SEQUENCE_NUMBER_1);
         entity1.setSum(FBS_SUM_1);
         entity1.setRequestCounter(FBS_REQUEST_COUNTER_1);
-
         FibonacciSequenceEntity entity2 = new FibonacciSequenceEntity();
         entity2.setId(FBS_ID_2);
         entity2.setFibonacciSequenceNumber(FBS_SEQUENCE_NUMBER_2);
         entity2.setSum(FBS_SUM_2);
         entity2.setRequestCounter(FBS_REQUEST_COUNTER_2);
-
         FibonacciSequenceEntity entity3 = new FibonacciSequenceEntity();
         entity3.setId(FBS_ID_3);
         entity3.setFibonacciSequenceNumber(FBS_SEQUENCE_NUMBER_3);
